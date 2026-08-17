@@ -1,0 +1,10 @@
+# Internal working notes, not meant to be committed
+TODO.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
