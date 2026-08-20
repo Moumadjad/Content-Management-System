@@ -42,7 +42,7 @@ A full-featured CMS designed for educational institutions to manage courses, art
 
 ## Project Structure
 
-See [`../TODO.md`](../TODO.md) section 0.1 for the current scaffold status. Database schema lives in [`src/database/schema.sql`](src/database/schema.sql).
+Database schema lives in [`src/database/schema.sql`](src/database/schema.sql).
 
 ```
 educms-backend/
@@ -81,7 +81,16 @@ guide (Render + local Docker instructions, Heroku kept for reference).
 
 ## Next Steps
 
-See [`../TODO.md`](../TODO.md) section 0.2 for the full roadmap (S3 uploads, Elasticsearch search, Redis caching wiring, WebSockets, Swagger docs, rate limiting, analytics dashboard, research paper).
+- Add Frontend (React Admin Panel)
+- Implement File Upload with AWS S3
+- Add Full-Text Search with Elasticsearch
+- Implement Caching with Redis
+- Add Real-time Features with WebSockets
+- Create Comprehensive Unit and Integration Tests
+- Add API Documentation with Swagger
+- Implement Rate Limiting and Security Enhancements
+- Add Analytics and Reporting Dashboard
+- Write Research Paper and Documentation
 
 ## Conclusion
 

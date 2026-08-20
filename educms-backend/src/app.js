@@ -46,8 +46,10 @@ app.get(`/api/${apiVersion}`, (req, res) => {
   res.json({ success: true, message: `EduCMS API ${apiVersion}` });
 });
 
-// TODO: mount feature routes here as they are built, e.g.
-// app.use(`/api/${apiVersion}/auth`, require('./routes/auth'));
+app.use(`/api/${apiVersion}/auth`, require('./routes/auth'));
+
+// TODO: mount remaining feature routes here as they are built, e.g.
+// app.use(`/api/${apiVersion}/posts`, require('./routes/posts'));
 
 app.use((req, res) => {
   res.status(404).json(errorResponse('Route not found'));
