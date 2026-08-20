@@ -12,7 +12,6 @@ services:
     dockerfilePath: ./educms-backend/Dockerfile
     dockerContext: ./educms-backend
     healthCheckPath: /health
-    preDeployCommand: node src/database/migrate.js
     envVars:
       - key: NODE_ENV
         value: production

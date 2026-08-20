@@ -13,8 +13,10 @@ provisions both the API (as a Docker web service) and a free PostgreSQL database
    - `educms-api` — free web service, built from `educms-backend/Dockerfile`, wired to
      `educms-db` via the `DATABASE_URL` env var, with `JWT_SECRET`/`JWT_REFRESH_SECRET`
      auto-generated.
-4. Click **Apply**. Render builds the image, runs the pre-deploy command
-   (`node src/database/migrate.js`, applies `src/database/schema.sql`), then starts the service.
+4. Click **Apply**. Render builds the image and starts the service; `server.js` applies
+   `src/database/schema.sql` automatically on first boot (it's a no-op on later restarts —
+   pre-deploy commands aren't available on the free plan, so the migration runs at startup
+   instead and checks whether the schema is already there before touching anything).
 5. Once live, check `https://<your-service>.onrender.com/health`.
 
 **Free tier limits:** the web service spins down after ~15 min of inactivity (cold start ~30s on
