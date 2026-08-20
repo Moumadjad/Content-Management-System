@@ -8,6 +8,7 @@ require('dotenv').config();
 
 const logger = require('./utils/logger');
 const { errorResponse } = require('./utils/helpers');
+const { pool } = require('./config/database');
 
 const app = express();
 
@@ -29,8 +30,16 @@ app.use(limiter);
 
 const apiVersion = process.env.API_VERSION || 'v1';
 
-app.get('/health', (req, res) => {
-  res.json({ success: true, message: 'EduCMS API is running', env: process.env.NODE_ENV });
+app.get('/health', async (req, res) => {
+  let database = 'down';
+  try {
+    await pool.query('SELECT 1');
+    database = 'up';
+  } catch (error) {
+    database = 'down';
+  }
+
+  res.json({ success: true, message: 'EduCMS API is running', env: process.env.NODE_ENV, database });
 });
 
 app.get(`/api/${apiVersion}`, (req, res) => {

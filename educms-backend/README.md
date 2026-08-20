@@ -2,6 +2,8 @@
 
 A full-featured CMS designed for educational institutions to manage courses, articles, announcements, and student resources with advanced role-based access control, content versioning, and analytics.
 
+**Live API:** https://educms-api-hoev.onrender.com ([`/health`](https://educms-api-hoev.onrender.com/health)) — deployed on Render's free tier, see [Deployment](#deployment).
+
 ## Key Features
 
 - User authentication and authorization (JWT)
@@ -73,7 +75,9 @@ npm run dev
 
 ## Deployment
 
-See [`DEPLOYMENT.md`](DEPLOYMENT.md) for the Heroku deployment guide.
+Deployed on [Render](https://render.com) (free tier) from the [`Dockerfile`](Dockerfile) via the
+[`render.yaml`](../render.yaml) Blueprint — see [`DEPLOYMENT.md`](DEPLOYMENT.md) for the full
+guide (Render + local Docker instructions, Heroku kept for reference).
 
 ## Next Steps
 
