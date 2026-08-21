@@ -24,4 +24,12 @@ const loginRules = [
 
 const refreshRules = [body('refreshToken').notEmpty().withMessage('refreshToken is required')];
 
-module.exports = { validate, registerRules, loginRules, refreshRules };
+const postRules = [
+  body('title').trim().isLength({ min: 3, max: 255 }).withMessage('Title must be 3-255 characters'),
+  body('content').notEmpty().withMessage('Content is required'),
+  body('status').optional().isIn(['draft', 'published', 'archived']).withMessage('Invalid status'),
+  body('categoryId').optional().isInt().withMessage('categoryId must be an integer'),
+  body('tagIds').optional().isArray().withMessage('tagIds must be an array'),
+];
+
+module.exports = { validate, registerRules, loginRules, refreshRules, postRules };

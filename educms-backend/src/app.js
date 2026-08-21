@@ -47,9 +47,10 @@ app.get(`/api/${apiVersion}`, (req, res) => {
 });
 
 app.use(`/api/${apiVersion}/auth`, require('./routes/auth'));
+app.use(`/api/${apiVersion}/posts`, require('./routes/posts'));
 
 // TODO: mount remaining feature routes here as they are built, e.g.
-// app.use(`/api/${apiVersion}/posts`, require('./routes/posts'));
+// app.use(`/api/${apiVersion}/categories`, require('./routes/categories'));
 
 app.use((req, res) => {
   res.status(404).json(errorResponse('Route not found'));
